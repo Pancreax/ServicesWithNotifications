@@ -6,7 +6,14 @@ import android.app.NotificationManager;
 import android.os.Build;
 import android.util.Log;
 
+/*
+ * This class is loaded when the application is loaded, before the main activity.
+ * This is done by adding it's name as the "android:name" property of the application
+ * in the AndroidManifest.xml file.
+ * Any initialization that applies to the whole application can be done in here.
+ */
 public class ServicesWithNotificationsApp extends Application {
+    public static final String TAG = "Services...App";
     public static final String CHANNEL_1_ID = "Channel1";
     public static final String CHANNEL_2_ID = "Channel2";
     public static final Integer SERVICE_NOTIFICATION_ID = 1;
@@ -14,10 +21,14 @@ public class ServicesWithNotificationsApp extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
-        Log.w("App","Initializing App!!");
+        Log.w(TAG,"Initializing App!!");
         createNotificationChannels();
     }
 
+    /*
+     * Creating the notification channels in here allows them to be created only once
+     * and then to be used anywhere in the whole application.
+     */
     private void createNotificationChannels() {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){

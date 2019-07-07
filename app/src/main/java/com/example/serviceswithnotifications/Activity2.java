@@ -15,15 +15,12 @@ import static com.example.serviceswithnotifications.ServicesWithNotificationsApp
 import static com.example.serviceswithnotifications.ServicesWithNotificationsApp.CHANNEL_2_ID;
 
 public class Activity2 extends AppCompatActivity {
-    private NotificationManagerCompat notificationManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
-
-        notificationManager = NotificationManagerCompat.from(this);
     }
 
     public void startService(View view) {

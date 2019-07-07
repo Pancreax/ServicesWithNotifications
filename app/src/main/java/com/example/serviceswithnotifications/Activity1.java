@@ -14,14 +14,11 @@ import android.view.View;
 import static com.example.serviceswithnotifications.ServicesWithNotificationsApp.CHANNEL_1_ID;
 
 public class Activity1 extends AppCompatActivity {
-    private NotificationManagerCompat notificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1);
-
-        notificationManager = NotificationManagerCompat.from(this);
     }
 
     public void startService(View view) {
