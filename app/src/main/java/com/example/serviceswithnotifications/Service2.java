@@ -15,8 +15,8 @@ import static com.example.serviceswithnotifications.ServicesWithNotificationsApp
 import static com.example.serviceswithnotifications.ServicesWithNotificationsApp.CHANNEL_2_ID;
 import static com.example.serviceswithnotifications.ServicesWithNotificationsApp.SERVICE_NOTIFICATION_ID;
 
-public class Service1 extends Service {
-    private final String TAG = "Service1";
+public class Service2 extends Service {
+    private final String TAG = "Service2";
     private Handler myHandler;
     private Boolean isRunning = false;
 

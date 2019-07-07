@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.ActivityManager;
 import android.app.Notification;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,19 +26,29 @@ public class Activity1 extends AppCompatActivity {
 
     public void startService(View view) {
 
+        if(isMyServiceRunning(Service1.class)) return;
+
         Intent serviceIntent = new Intent(this,Service1.class);
         serviceIntent.putExtra("extra","extra1Val");
-
         startService(serviceIntent);
+    }
 
-        /*Notification notification = new NotificationCompat.Builder(this,CHANNEL_1_ID)
-                .setSmallIcon(R.drawable.ic_1)
-                .setContentTitle("Title1")
-                .setContentText("Text1")
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .build();
+    public void stopService(View view) {
 
-        notificationManager.notify(1, notification);*/
+        if(!isMyServiceRunning(Service1.class)) return;
+
+        Intent serviceIntent = new Intent(this,Service1.class);
+        stopService(serviceIntent);
+    }
+
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

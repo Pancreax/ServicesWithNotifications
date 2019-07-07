@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity2"></activity>
+        <activity android:name=".Activity2" />
         <activity android:name=".Activity1" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="Service1" />
+
+        <service android:name=".Service1" />
+        <service android:name=".Service2" />
     </application>
 
 </manifest>

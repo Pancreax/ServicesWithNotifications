@@ -9,6 +9,7 @@ import android.util.Log;
 public class ServicesWithNotificationsApp extends Application {
     public static final String CHANNEL_1_ID = "Channel1";
     public static final String CHANNEL_2_ID = "Channel2";
+    public static final Integer SERVICE_NOTIFICATION_ID = 1;
 
     @Override
     public void onCreate(){
