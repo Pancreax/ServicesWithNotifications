@@ -1,4 +1,4 @@
-#ServicesWithNotifications
+# ServicesWithNotifications
 
 This project is an example of an Native Android App with foreground services and notifications.
 
